@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="user-scalable=no">
+    <title>Farm Fruits Crush</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon/icon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/favicon/icon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/favicon/icon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="assets/favicon/icon-152x152.png" sizes="152x152">
+
+    <link rel="apple-touch-icon" type="image/png" href="assets/favicon/icon-120x120.png">
+    <link rel="apple-touch-icon" type="image/png" href="assets/favicon/icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" type="image/png" href="assets/favicon/icon-167x167.png" sizes="167x167">
+    <link rel="apple-touch-icon" type="image/png" href="assets/favicon/icon-180x180.png" sizes="180x180">
+
+    <link rel="manifest" href="assets/favicon/manifest.json">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/game.css">
+
+
+
+	<script src="https://connect.facebook.net/en_US/fbinstant.6.2.js"></script>
+    <script src="jquery3.2.0.js"></script>
+
+
+
+</head>
+
+<body style="background-color: #2e87b3">
+
+
+
+    <div id="wrongRotation">
+        <img src="assets/img/rotate_screen.png" alt="" />
+    </div>
+
+    <div id="game">
+        
+
+        <script src="js/game.js"></script>
+
+    </div>
+
+    <div class="font_preload" style="opacity: 0">
+        <span style="font-family: 'gameFont', Arial, sans-serif;"></span>
+    </div>
+    <div id="ads"></div>
+	
+	<script>
+    window.onload = function () {
+        FBInstant.initializeAsync()
+            .then(function () {
+                FBInstant.setLoadingProgress(100);
+                FBInstant.startGameAsync()
+                    .then(function () {
+                        LoadInter();
+                        LoadRewarded();
+                    });
+            }).catch(err => {
+                console.error('Ads failed to preload', err.message);
+            });
+    }
+</script>
+
+</body>
+
+</html>
